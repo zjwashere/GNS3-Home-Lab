@@ -15,6 +15,9 @@ Everything is built in phases so you're never running more VMs at once than need
 - **WebTerm or a lightweight Linux appliance** — quick CLI access inside the topology
 
 
+## Current Topology
+![01_topology](docs/01_topology.png)
+
 ## Objectives
  
 | # | Topic | Objectives | Status |
