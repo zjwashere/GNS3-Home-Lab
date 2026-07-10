@@ -8,7 +8,7 @@ Because Kali Linux is Debian-based, the steps to install GNS3 is different if yo
 
 ## Objectives
  - Install GNS3 + local hypervisor (QEMU/VirtualBox). 
- - Download pfSense CE, Windows Server 2022 Eval, Windows 10 Eval ISOs. 
+ - Download Windows Server 2022 Eval and Windows 10 Eval ISOs. 
  - Confirm nested networking (loopback/NAT cloud) works.
 
 ## Steps
@@ -61,9 +61,8 @@ virtualbox
 
 ### Download ISOs
 
-1. Pfsense CE: https://www.pfsense.org/download/
-2. Windows Sever 2022: https://software-download.microsoft.com/download/pr/20348.1.210507-1500.fe_release_SERVER_EVAL_x64FRE_en-us.iso
-3. Windows 10 Eval: https://software-static.download.prss.microsoft.com/dbazure/988969d5-f34g-4e03-ac9d-1f9786c66750/19045.2006.220908-0225.22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
+1. Windows Sever 2022: https://software-download.microsoft.com/download/pr/20348.1.210507-1500.fe_release_SERVER_EVAL_x64FRE_en-us.iso
+2. Windows 10 Eval: https://software-static.download.prss.microsoft.com/dbazure/988969d5-f34g-4e03-ac9d-1f9786c66750/19045.2006.220908-0225.22h2_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso
 
 ### Testing NAT Cloud
 
