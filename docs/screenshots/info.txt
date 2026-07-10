@@ -1,0 +1,1 @@
+export from GNS3 after each major phase

@@ -1,0 +1,1 @@
+Powershell/bash used for config
