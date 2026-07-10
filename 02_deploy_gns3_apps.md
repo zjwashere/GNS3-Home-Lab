@@ -18,4 +18,14 @@ VirtIO/Guest tools is installed to speed up disk and network I/O.
 
 ## Steps
 
+### Import pfSense
+
+pfSense already has a ready-made .gns3a appliance template so you don't hand-build it like the Windows VMs.
+
+1. GNS3: File → New template → Install an appliance from the GNS3 server 
+
+2. Search for pfSense and install it
+
+3. GNS3 shows you the required files for a given release — typically an ISO installer and an empty qcow2 disk (e.g., "empty100G.qcow2"). Click Download for each; it'll bounce you to Netgate's site and the GNS3 registry for the empty disk.
+
 ## Resources
