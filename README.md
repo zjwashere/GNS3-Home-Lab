@@ -22,7 +22,7 @@ Everything is built in phases so you're never running more VMs at once than need
  
 | # | Topic | Objectives | Status |
 |---|---|---|---|
-| 1 | [Prep the Host](01_prep_host.md)| Install GNS3 + local hypervisor (QEMU/VirtualBox). Download pfSense CE, Windows Server 2022 Eval, Windows 10 Eval ISOs. Confirm nested networking (loopback/NAT cloud) works. | Planned |
+| 1 | [Prep the Host](01_prep_host.md)| Install GNS3 + local hypervisor (QEMU/VirtualBox). Download pfSense CE, Windows Server 2022 Eval, Windows 10 Eval ISOs. Confirm nested networking (loopback/NAT cloud) works. | Completed |
 | 2 | Deploy GNS3 Appliances | Import pfSense, a switch appliance, and a WebTerm node. Build Windows Server and Windows 10 QEMU templates. Install VirtIO/Guest tools for performance. | Planned |
 | 3 | Install & Configure pfSense | Add pfSense + NAT cloud to canvas. Complete initial setup wizard, assign WAN/LAN. | Planned |
 | 4 | VLAN Trunking on pfSense | Assign LAN interface IP. Enable WebGUI/console access. Create trunk parent interface. Create VLAN sub-interfaces (e.g., VLAN10-Users, VLAN20-Servers, VLAN99-Mgmt). | Planned |
