@@ -2,6 +2,7 @@
 
 ## Goal
 
+GNS3 (Graphical Network Simulator-3) is a free, open-source network software emulator that allows network and IT professionals to design, build, and test complex virtual networks. It lets you emulate real routers, switches, and firewalls without the physical hardware.
 Before I can use GNS3, I must prepare my Kali host device by downloading all the dependencies and ISOs for VMs in GNS3. 
 I'm using Kali Linux in particular because I've already had this OS installed in my device, and I don't plan to install another OS for this project.
 Because Kali Linux is Debian-based, the steps to install GNS3 is different if you are running a different OS. 
