@@ -149,9 +149,6 @@ The addess I receieved was 192.168.122.x, which verifies that NAT cloud works!
 Successfully pinging 8.8.8.8
 ![outbound ping](docs/screenshots/01_prep_host/ping.png)
 
-## Verification
-
-## Issues & Fixes
 
 ## Resources
 GNS3 Linux install: https://docs.gns3.com/docs/getting-started/installation/linux
