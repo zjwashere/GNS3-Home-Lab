@@ -70,9 +70,7 @@ virtualbox
 1. Drag the NAT from Browse All Devices
 
 Then, I ran into this error and doesn't allow me to place the NAT:
-```sh
-Error while creating node from template: NAT interface virbr0 is missing, please install libvirt
-```
+`Error while creating node from template: NAT interface virbr0 is missing, please install libvirt`
 
 * Fix: 
 
@@ -98,10 +96,7 @@ sudo systemctl restart libvirtd
 ```
 
 Then, I received this other error:
-```sh
-Error while creating node from template: uBridge is not available, path doesn't exist, or you just installed GNS3 and need to restart your user session to refresh user permissions.
-
-```
+`Error while creating node from template: uBridge is not available, path doesn't exist, or you just installed GNS3 and need to restart your user session to refresh user permissions.`
 
 * Fix (according to https://www.sysnettechsolutions.com/en/install-gns3-kali-linux/#how-to-fix-the-ubridge-is-not-available-error-in-gns3-step-1)
 
@@ -121,9 +116,8 @@ This successfully fixed the errors.
 2. Drag the VPC (Virtual PC) from Browse All
 
 VPC didn't start and gave me this error: 
-```sh
-error while starting PC1: No path to a VPCS executable has been set
-```
+`error while starting PC1: No path to a VPCS executable has been set`
+
 * Fix:
 ```sh
 sudo apt install vpcs
@@ -136,9 +130,8 @@ This allowed the VPC to get started.
 
 4. Start a Console on VPC
 Received this error:
-```sh
-Could not start Telnet console with command 'xterm -T "PC1" -e "telnet localhost 5001"': [Errno 2] No such file or directory: 'xterm'
-```
+`Could not start Telnet console with command 'xterm -T "PC1" -e "telnet localhost 5001"': [Errno 2] No such file or directory: 'xterm'`
+
 * Fix
 ```sh
 sudo apt install xterm
