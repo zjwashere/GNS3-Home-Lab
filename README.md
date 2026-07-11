@@ -2,6 +2,7 @@
 A personal GNS3 home lab built for local hardware, designed for hands-on practice in networking, server, and security concepts. 
 This plan mirrors the structure of [e-vakker/office-dc-lab](https://github.com/e-vakker/office-dc-lab), but scoped for local hardware instead of a cloud VM.
 Everything is built in phases so you're never running more VMs at once than needed.
+Additionally, this is an opportunity to gain experience with tools utilized by cybersecurity professionals.
 
 
 ## Software Stack
@@ -16,15 +17,15 @@ Everything is built in phases so you're never running more VMs at once than need
 
 
 ## Current Topology
-![01_topology](docs/01_topology.png)
+![02_topology](docs/02_topology.png)
 
 ## Objectives
  
 | # | Topic | Objectives | Status |
 |---|---|---|---|
 | 1 | [Prep the Host](01_prep_host.md)| Install GNS3 + local hypervisor (QEMU/VirtualBox). Download pfSense CE, Windows Server 2022 Eval, Windows 10 Eval ISOs. Confirm nested networking (loopback/NAT cloud) works. | Completed |
-| 2 | Deploy GNS3 Appliances | Import pfSense, a switch appliance, and a WebTerm node. Build Windows Server and Windows 10 QEMU templates. Install VirtIO/Guest tools for performance. | Planned |
-| 3 | Install & Configure pfSense | Add pfSense + NAT cloud to canvas. Complete initial setup wizard, assign WAN/LAN. | Planned |
+| 2 | [Deploy GNS3 Appliances](02_deploy_gns3_apps.md) | Import pfSense, a switch appliance, and a WebTerm node. Build Windows Server and Windows 10 QEMU templates. Install VirtIO/Guest tools for performance. | Completed |
+| 3 | [Install & Configure pfSense](03_install_configure_pfsense.md) | Add pfSense + NAT cloud to canvas. Complete initial setup wizard, assign WAN/LAN. | Planned |
 | 4 | VLAN Trunking on pfSense | Assign LAN interface IP. Enable WebGUI/console access. Create trunk parent interface. Create VLAN sub-interfaces (e.g., VLAN10-Users, VLAN20-Servers, VLAN99-Mgmt). | Planned |
 | 5 | Management VLAN | Stand up a dedicated MGMT VLAN for switch/firewall admin access, separate from user traffic. | Planned |
 | 6 | Baseline Firewall Rules | Create interface groups. Add permissive rules to validate connectivity end-to-end before locking down later. | Planned |
