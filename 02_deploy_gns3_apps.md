@@ -123,5 +123,8 @@ Same process as Windows Server:
 
 ![setting network config](<docs/screenshots/02_deploy_gns3_apps.md/network config.png>)
 
+**Steps are complete**
+pfSense, switch, Windows Server, and Windows 10 are confirmed working. 
+
 ## Resources
 VirtIO Drivers: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.285-1/
