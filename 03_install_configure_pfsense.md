@@ -16,21 +16,15 @@ With everything installed, we will configure pfSense to create a topology where 
 
 1. Drag the pfSense node and NAT node onto the canvas
 * The NAT is what gives pfSense's WAN side actual internet access, standing in for "the ISP connection" in a real network
-
 2. Draw a link: NAT node NAT node (nat0) ↔ pfSense's first interface (em0)
-
 ![adding nat and pfsense link](<docs/screenshots/03_install_configure_pfsense/nat pfsense link.png>)
-
 3. For the LAN side, Add a switch node (Ethernet0) connected to pfSense's second interface (em1)
-
 ![adding pfsense and switch link](<docs/screenshots/03_install_configure_pfsense/pfsense switch link.png>)
-
 4. Start the NAT node and pfSense, console into pfSense 
 
-# Complete initial setup wizard
+### Complete initial setup wizard
 
 This should be the same steps from objective #2 when setting up pfSense.
-
 ![pfSense startup](<docs/screenshots/03_install_configure_pfsense/pfsense startup.png>)
 
 ### Configure WAN
@@ -39,7 +33,7 @@ From the inital startup, it says that WAN at em0 is already setup. `v4/DHCP4: 19
 
 That is expected because pfSense's WAN interface is set to DHCP, and your NAT cloud runs a DHCP server — so WAN should pull an address automatically.
 
-* However, we can verify this by entering `2` in the console menu for `2) Set interface(s) IP address`
+* We can verify this by entering `2` in the console menu for `2) Set interface(s) IP address`
 * Then, select interface #1, and for `Configure IPv4 address WAN interface via DHCP?` select `y` 
 * This should result in the same IPv4 address that the NAT already gave to us.
 
@@ -67,10 +61,8 @@ LAN needs to be static since this is the network I'll build everything else on t
 ### Test DHCP with VPC
 
 1. Add a VPCS node connected to the same LAN switch
-
 2. Console into it, run `ip dhcp` 
 * It should pull an address in the 192.168.1.x range from pfSense
-
 3. Confirm outbound connectivity end-to-end
 ```sh
 ping 192.168.1.1      # confirms LAN gateway reachable
@@ -83,7 +75,6 @@ ping 8.8.8.8           # confirms pfSense is NATing traffic out through WAN
 1. Add a WebTerm node connected to the same LAN switch
 
 I ran into this error: `Error while creating node from template: Docker has returned an error: Cannot connect to unix socket /var/run/docker.sock ssl:default [No such file or directory]`
-
 * Fix: WebTerm requires installing docker 
 ```sh
 sudo apt install -y docker.io
@@ -107,8 +98,7 @@ Now WebTerm finally works, I connected it to the LAN switch
 ![Adding WebTerm and switch link ](<docs/screenshots/03_install_configure_pfsense/webterm switch link.png>)
 
 2. Enter https://192.168.1.1 into the address bar
-
-Error: No connection
+I received a `No connection` to the webpage.
 * Fix: WebTerm containers don't always auto-DHCP on boot, so we have to manually change the /etc/network/interfaces file in WebTerm's terminal 
 ```sh
 #in WebTerm's Terminal 
