@@ -19,11 +19,11 @@ With everything installed, we will configure pfSense to create a topology where 
 
 2. Draw a link: NAT node NAT node (nat0) ↔ pfSense's first interface (em0)
 
-SS
+![adding nat and pfsense link](<docs/screenshots/03_install_configure_pfsense/nat pfsense link.png>)
 
 3. For the LAN side, Add a switch node (Ethernet0) connected to pfSense's second interface (em1)
 
-SS
+![adding pfsense and switch link](<docs/screenshots/03_install_configure_pfsense/pfsense switch link.png>)
 
 4. Start the NAT node and pfSense, console into pfSense 
 
@@ -31,7 +31,7 @@ SS
 
 This should be the same steps from objective #2 when setting up pfSense.
 
-StartupSS
+![pfSense startup](<docs/screenshots/03_install_configure_pfsense/pfsense startup.png>)
 
 ### Configure WAN
 
@@ -43,7 +43,7 @@ That is expected because pfSense's WAN interface is set to DHCP, and your NAT cl
 * Then, select interface #1, and for `Configure IPv4 address WAN interface via DHCP?` select `y` 
 * This should result in the same IPv4 address that the NAT already gave to us.
 
-configure wanSS
+![Configured WAN](<docs/screenshots/03_install_configure_pfsense/configure wan.png>)
 
 ### Configure LAN
 
@@ -53,16 +53,16 @@ LAN needs to be static since this is the network I'll build everything else on t
 2. Select `2` for LAN
 3. Select `n` for configuring IPv4 address LAN interface via DHCP
 4. Set static IP as `192.168.1.1` and subnet mask as `24`.
-SS
+![Setting static IP](<docs/screenshots/03_install_configure_pfsense/configure lan.png>)
 5. Press ENTER for none in LAN IPv4 upstream gateway address.
 6. Select `n` for configuring IPv6 address LAN interface via DHCP6
 7. Press ENTER for none in LAN IPv6 address.
 8. Enter `yes` for enable DHCP server on LAN
 9. Start range as `192.168.1.100` and end range as `192.168.1.200`.
-SS
+![Setting DHCP range](<docs/screenshots/03_install_configure_pfsense/configure lan2.png>)
 10. Select `n` for revert to HTTP as webConfigurator protocol. 
 
-SS
+![Configured LAN](<docs/screenshots/03_install_configure_pfsense/configure lan3.png>)
 
 ### Access the pfSense Web GUI to finish setup
 
@@ -86,7 +86,7 @@ I ran into this error: `Error while creating node from template: x11 socket file
 sudo apt install tigervnc-standalone-server
 sudo apt install busybox-static 
 ```
-SS
+![Working WebTerm](<docs/screenshots/03_install_configure_pfsense/webterm working.png>)
 
 Now WebTerm finally works, I connected it to the LAN switch
 
@@ -104,10 +104,12 @@ auto eth0
 iface eth0 inet dhcp
 ```
 Then restart the node by turning it off and on.
-SS
+
+![Fixing WebTerm DHCP](<docs/screenshots/03_install_configure_pfsense/webterm fix dhcp.png>)
 
 Now I'm able to access the pfSense's web interface.
-SS
+
+![pfSense web interface now accessible](<docs/screenshots/03_install_configure_pfsense/webterm working1.png>)
 
 ## Resources
 
