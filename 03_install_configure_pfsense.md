@@ -130,4 +130,5 @@ Now I'm able to access the pfSense's web interface.
 
 ## Resources
 
+pfSense installation documentation: https://docs.netgate.com/pfsense/en/latest/install/index.html
 WebTerm: https://gns3.com/marketplace/appliances/webterm 
