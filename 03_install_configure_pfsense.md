@@ -64,6 +64,20 @@ LAN needs to be static since this is the network I'll build everything else on t
 
 ![Configured LAN](<docs/screenshots/03_install_configure_pfsense/configure lan3.png>)
 
+### Test DHCP with VPC
+
+1. Add a VPCS node connected to the same LAN switch
+
+2. Console into it, run `ip dhcp` 
+* It should pull an address in the 192.168.1.x range from pfSense
+
+3. Confirm outbound connectivity end-to-end
+```sh
+ping 192.168.1.1      # confirms LAN gateway reachable
+ping 8.8.8.8           # confirms pfSense is NATing traffic out through WAN
+```
+![Test DHCP](<docs/screenshots/03_install_configure_pfsense/test dhcp.png>)
+
 ### Access the pfSense Web GUI to finish setup
 
 1. Add a WebTerm node connected to the same LAN switch
@@ -90,6 +104,8 @@ sudo apt install busybox-static
 
 Now WebTerm finally works, I connected it to the LAN switch
 
+![Adding WebTerm and switch link ](<docs/screenshots/03_install_configure_pfsense/webterm switch link.png>)
+
 2. Enter https://192.168.1.1 into the address bar
 
 Error: No connection
@@ -110,6 +126,17 @@ Then restart the node by turning it off and on.
 Now I'm able to access the pfSense's web interface.
 
 ![pfSense web interface now accessible](<docs/screenshots/03_install_configure_pfsense/webterm working1.png>)
+
+3. Login with the default credentials (`admin`/`pfsense`)
+
+![pfSense login](<docs/screenshots/03_install_configure_pfsense/pfsense login.png>)
+
+4. Complete the Setup Wizard in the GUI: hostname, domain, DNS servers (leave blank to use WAN-assigned DNS from NAT, or set 8.8.8.8 explicitly), timezone, and confirm WAN/LAN settings match what you set at console
+
+![pfSense setup](<docs/screenshots/03_install_configure_pfsense/pfsense setup.png>)
+
+![pfSense finish setup](<docs/screenshots/03_install_configure_pfsense/pfsense finish.png>)
+
 
 ## Resources
 
