@@ -23,32 +23,41 @@ Additionally, this is an opportunity to gain experience with tools utilized by c
  
 | # | Topic | Objectives | Status |
 |---|---|---|---|
-| 1 | [Prep the Host](01_prep_host.md)| Install GNS3 + local hypervisor (QEMU/VirtualBox). Download pfSense CE, Windows Server 2022 Eval, Windows 10 Eval ISOs. Confirm nested networking (loopback/NAT cloud) works. | Completed |
-| 2 | [Deploy GNS3 Appliances](02_deploy_gns3_apps.md) | Import pfSense, a switch appliance, and a WebTerm node. Build Windows Server and Windows 10 QEMU templates. Install VirtIO/Guest tools for performance. | Completed |
-| 3 | [Install & Configure pfSense](03_install_configure_pfsense.md) | Add pfSense + NAT cloud to canvas. Complete initial setup wizard, assign WAN/LAN. | Completed |
-| 4 | [VLAN Trunking on pfSense](04_vlan_trunking_pfsense.md) | Assign LAN interface IP. Enable WebGUI/console access. Create trunk parent interface. Create VLAN sub-interfaces (e.g., VLAN10-Users, VLAN20-Servers, VLAN99-Mgmt). | Completed |
-| 5 | [Management VLAN](05_management_vlan.md) | Stand up a dedicated MGMT VLAN for switch/firewall admin access, separate from user traffic. | Completed |
-| 6 | [Baseline Firewall Rules](06_baseline_firewall_rules.md) | Create interface groups. Add permissive rules to validate connectivity end-to-end before locking down later. | Planned |
-| 7 | Core & Access Switching | Deploy core + access switch nodes. Configure trunk vs access ports per VLAN. Interconnect switches. Disable unused mgmt interfaces. | Planned |
-| 8 | Domain Controller (DC01) | Rename server, assign static IP on Servers VLAN. Install AD DS. Promote to first DC in a new forest. | Planned |
-| 9 | DHCP Server & Relay | Install DHCP role on DC01. Create scopes per VLAN. Configure DHCP relay/IP helper on pfSense so clients across VLANs get leases. | Planned |
-| 10 | DNS Forwarding | Configure forwarders on DC01's DNS for external resolution. Point client DNS settings at DC01. | Planned |
-| 11 | Organizational Units | Design and create an OU structure (e.g., by department or by device type) to support GPO targeting later. | Planned |
-| 12 | Join Clients & Create Users | Deploy Windows 10 client(s). Create user accounts. Join clients to the domain. | Planned |
-| 13 | AD Security Groups | Create security groups mapped to OUs/roles. Add users to groups. | Planned |
-| 14 | Baseline GPOs | Configure password/lockout policy. Apply a basic optimization/hardening GPO. | Planned |
-| 15 | Lightweight Server Appliance | Build a Server Core template (lower RAM footprint) for future roles instead of full Desktop Experience. | Planned |
-| 16 | File Server (FS01) | Deploy FS01, create shares, apply NTFS + share permissions tied to AD groups. | Planned |
-| 17 | Backup Server (BKUP01) | Stand up a basic backup target/job (Windows Server Backup or a lightweight solution) for FS01/DC01. | Planned |
-| 18 | ACLs on Core Switches | Apply VLAN-aware ACLs to restrict inter-VLAN traffic beyond firewall rules. | Planned |
-| 19 | Restrictive Firewall Rules | Replace the permissive rule set from #6 with least-privilege rules per VLAN. | Planned |
-| 20 | RADIUS / NPS | Deploy NPS for centralized auth (e.g., switch/WiFi mgmt login via RADIUS). | Planned |
-| 21 | Logging Server | Stand up a syslog target (e.g., a lightweight Linux node) and forward firewall/switch logs to it. | Planned |
-| 22 | Monitoring | Deploy a lightweight monitoring tool (e.g., Zabbix/PRTG free tier/Nagios core) for uptime/health checks. | Planned |
-| 23 | Software Deployment & Drive Mapping GPOs | Configure GPOs for mapped drives and basic software deployment. | Planned |
-| 24 | IDS/IPS | Deploy Suricata/Snort (as a GNS3 appliance or on pfSense via package) to monitor/alert on traffic. | Planned |
-| 25 | Site-to-Site VPN / Branch Office | Add a second pfSense instance representing a branch site; build an IPsec/WireGuard tunnel back to HQ. | Planned |
-| 26 | Failover Test | Document a deliberate failure (e.g., kill core switch or DC) and record recovery behavior/lessons learned. | Planned |
+| 1 | [Prep the Host](01_prep_host.md)| Install GNS3 + local hypervisor. Download pfSense, Windows Server, Windows 10 ISOs. Confirm NAT cloud works. | Completed |
+| 2 | [Deploy GNS3 Appliances](02_deploy_gns3_apps.md) | Import pfSense, switch, WebTerm. Build Windows Server/10 QEMU templates. Install VirtIO tools. | Completed |
+| 3 | [Install & Configure pfSense](03_install_configure_pfsense.md) | Add pfSense + NAT cloud. Setup wizard, assign WAN/LAN. | Completed |
+| 4 | [VLAN Trunking on pfSense](04_vlan_trunking_pfsense.md) | Trunk parent + VLAN sub-interfaces (Users/Servers/Mgmt). | Completed |
+| 5 | [Management VLAN](05_management_vlan.md) | Dedicated MGMT VLAN for admin access, separate from user traffic. | Completed |
+| 6 | [Baseline Firewall Rules](06_baseline_firewall_rules.md) | Interface groups. Permissive rules to validate connectivity before locking down. | Planned |
+| 7 | Core & Access Switching | Core + access switches. Trunk vs access ports per VLAN. Disable unused ports. | Planned |
+| 8 | Domain Controller (DC01) | Static IP on Servers VLAN. Install AD DS. Promote to first DC. | Planned |
+| 9 | DHCP Server & Relay | DHCP role on DC01, authorize in AD. Scopes per VLAN. Relay on pfSense. | Planned |
+| 10 | DNS Forwarding | Forwarders on DC01. Point clients at DC01 DNS only. | Planned |
+| 11 | Organizational Units | Design and create OU structure for GPO targeting. | Planned |
+| 12 | Join Clients & Create Users | Deploy Windows 10 client(s). Create users. Join to domain. | Planned |
+| 13 | AD Security Groups | Role-based groups mapped to OUs. Add users. | Planned |
+| 14 | Baseline GPOs | Password/lockout policy. Basic hardening GPO. Verify with gpresult. | Planned |
+| 15 | Lightweight Server Appliance | Server Core template for future roles. | Planned |
+| 16 | File Server (FS01) | Shares + NTFS permissions tied to AD groups. | Planned |
+| 17 | Backup Server (BKUP01) | Backup job for FS01/DC01. Test restore, not just job status. | Planned |
+| 18 | Second Domain Controller (DC02) | Deploy DC02, verify AD replication, note FSMO roles — removes DC01 single point of failure. | Planned |
+| 19 | Certificate Authority (AD CS) | Install AD CS on DC01/dedicated node. Issue a domain-trusted cert for later use (WEB01, RADIUS, VPN). | Planned | 
+| 20 | DMZ Setup | 4th NIC on pfSense, isolated DMZ interface. Narrow rules: DMZ → DB01 SQL port only. WAN port-forward. | Planned | 
+| 21 | Web Server (WEB01) | Deploy in DMZ, NOT domain-joined. IIS + test site. Confirm no route to internal domain resources. | Planned | 
+| 22 | Database Server (DB01) | Deploy on Servers VLAN, domain-joined. SQL Server Mixed Mode, dedicated local login scoped to one DB. | Planned | 
+| 23 | WEB01 → DB01 Service Account & Connection | Encrypted connection string in IIS. Test SQL-login-only connection, confirm no other domain path. | Planned | 
+| 24 | ACLs on Core Switches | VLAN-aware ACLs as a second enforcement layer behind pfSense. | Planned |
+| 25 | Restrictive Firewall Rules | Replace permissive rules (#6) with least-privilege per VLAN. Verify DMZ isolation holds. | Planned |
+| 26 | RADIUS / NPS | NPS on DC01 for centralized switch/pfSense admin login, tied to IT-Admins group. | Planned |
+| 27 | Logging Server | Linux syslog target. Forward pfSense/switch logs. | Planned |
+| 28 | Monitoring | Zabbix/Nagios for uptime/health. Test at least one real alert. | Planned |
+| 29 | Software Deployment & Drive Mapping GPOs | GPP drive maps by group. Basic software deployment GPO. | Planned |
+| 30 | IDS/IPS | Suricata on pfSense, focused on DMZ interface. Trigger and review a test alert. | Planned |
+| 31 | Site-to-Site VPN / Branch Office | Second pfSense instance, IPsec/WireGuard tunnel to HQ. | Planned |
+| 32 | Failover Test | Kill a node deliberately, document recovery time and lessons learned. | Planned |
+| 33 | Linux Deployment | Debian/Ubuntu node, static IP, joins Mgmt VLAN. | Planned |
+| 34 | Linux User & Access Management | Non-root users, sudo, SSH key auth, disable root/password SSH login. | Planned |
+| 35 | Linux Hardening | UFW/nftables, fail2ban, auditd, unattended-upgrades. | Planned |
 
 
 ## Resources & References
