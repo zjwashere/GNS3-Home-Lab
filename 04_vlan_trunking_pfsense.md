@@ -133,3 +133,5 @@ This successfully fixes the problem.
 ![Corss VLAN ping](<docs/screenshots/04_vlan_trunking_pfsense/cross vlan ping.png>)
 
 ## Resources
+
+pfSense VLAN configuration: https://docs.netgate.com/pfsense/en/latest/vlan/configuration.html
