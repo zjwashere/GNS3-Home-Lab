@@ -17,7 +17,7 @@ Additionally, this is an opportunity to gain experience with tools utilized by c
 
 
 ## Current Topology
-![03_topology](docs/03_topology.png)
+![04_topology](docs/04_topology.png)
 
 ## Objectives
  
@@ -26,8 +26,8 @@ Additionally, this is an opportunity to gain experience with tools utilized by c
 | 1 | [Prep the Host](01_prep_host.md)| Install GNS3 + local hypervisor (QEMU/VirtualBox). Download pfSense CE, Windows Server 2022 Eval, Windows 10 Eval ISOs. Confirm nested networking (loopback/NAT cloud) works. | Completed |
 | 2 | [Deploy GNS3 Appliances](02_deploy_gns3_apps.md) | Import pfSense, a switch appliance, and a WebTerm node. Build Windows Server and Windows 10 QEMU templates. Install VirtIO/Guest tools for performance. | Completed |
 | 3 | [Install & Configure pfSense](03_install_configure_pfsense.md) | Add pfSense + NAT cloud to canvas. Complete initial setup wizard, assign WAN/LAN. | Completed |
-| 4 | [VLAN Trunking on pfSense](04_vlan_trunking_pfsense.md) | Assign LAN interface IP. Enable WebGUI/console access. Create trunk parent interface. Create VLAN sub-interfaces (e.g., VLAN10-Users, VLAN20-Servers, VLAN99-Mgmt). | Planned |
-| 5 | Management VLAN | Stand up a dedicated MGMT VLAN for switch/firewall admin access, separate from user traffic. | Planned |
+| 4 | [VLAN Trunking on pfSense](04_vlan_trunking_pfsense.md) | Assign LAN interface IP. Enable WebGUI/console access. Create trunk parent interface. Create VLAN sub-interfaces (e.g., VLAN10-Users, VLAN20-Servers, VLAN99-Mgmt). | Completed |
+| 5 | [Management VLAN](05_management_vlan.md) | Stand up a dedicated MGMT VLAN for switch/firewall admin access, separate from user traffic. | Planned |
 | 6 | Baseline Firewall Rules | Create interface groups. Add permissive rules to validate connectivity end-to-end before locking down later. | Planned |
 | 7 | Core & Access Switching | Deploy core + access switch nodes. Configure trunk vs access ports per VLAN. Interconnect switches. Disable unused mgmt interfaces. | Planned |
 | 8 | Domain Controller (DC01) | Rename server, assign static IP on Servers VLAN. Install AD DS. Promote to first DC in a new forest. | Planned |
