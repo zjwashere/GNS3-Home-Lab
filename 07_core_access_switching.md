@@ -1,4 +1,4 @@
-# 07 Core & Access Switching
+# 07 - Core & Access Switching
 
 ## Goal
 
