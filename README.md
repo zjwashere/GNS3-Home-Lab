@@ -17,7 +17,7 @@ Additionally, this is an opportunity to gain experience with tools utilized by c
 
 
 ## Current Topology
-![05_topology](docs/05_topology.png)
+![07_topology](docs/07_topology.png)
 
 ## Objectives
  
@@ -29,7 +29,7 @@ Additionally, this is an opportunity to gain experience with tools utilized by c
 | 4 | [VLAN Trunking on pfSense](04_vlan_trunking_pfsense.md) | Trunk parent + VLAN sub-interfaces (Users/Servers/Mgmt). | Completed |
 | 5 | [Management VLAN](05_management_vlan.md) | Dedicated MGMT VLAN for admin access, separate from user traffic. | Completed |
 | 6 | [Baseline Firewall Rules](06_baseline_firewall_rules.md) | Interface groups. Permissive rules to validate connectivity before locking down. | Completed |
-| 7 | [Core & Access Switching](07_core_access_switching.md) | Core + access switches. Trunk vs access ports per VLAN. Disable unused ports. | Planned |
+| 7 | [Core & Access Switching](07_core_access_switching.md) | Add Cisco IOSvL2. Core + access switches. Trunk vs access ports per VLAN. Disable unused ports. | Completed |
 | 8 | [Domain Controller (DC01)](08_domain_controller.md) | Static IP on Servers VLAN. Install AD DS. Promote to first DC. | Planned |
 | 9 | DHCP Server & Relay | DHCP role on DC01, authorize in AD. Scopes per VLAN. Relay on pfSense. | Planned |
 | 10 | DNS Forwarding | Forwarders on DC01. Point clients at DC01 DNS only. | Planned |
