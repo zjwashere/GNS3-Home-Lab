@@ -31,8 +31,8 @@ Additionally, this is an opportunity to gain experience with tools utilized by c
 | 6 | [Baseline Firewall Rules](06_baseline_firewall_rules.md) | Interface groups. Permissive rules to validate connectivity before locking down. | Completed |
 | 7 | [Core & Access Switching](07_core_access_switching.md) | Add Cisco IOSvL2. Core + access switches. Trunk vs access ports per VLAN. Disable unused ports. | Completed |
 | 8 | [Domain Controller (DC01)](08_domain_controller.md) | Static IP on Servers VLAN. Install AD DS. Promote to first DC. | Completed |
-| 9 | [DHCP Server & Relay](09_dhcp_server_relay.md) | DHCP role on DC01, authorize in AD. Scopes per VLAN. Relay on pfSense. | Planned |
-| 10 | DNS Forwarding | Forwarders on DC01. Point clients at DC01 DNS only. | Planned |
+| 9 | [DHCP Server & Relay](09_dhcp_server_relay.md) | DHCP role on DC01, authorize in AD. Scopes per VLAN. Relay on pfSense. | Completed |
+| 10 | [DNS Forwarding](10_dns_forwarding.md) | Forwarders on DC01. Point clients at DC01 DNS only. | Planned |
 | 11 | Organizational Units | Design and create OU structure for GPO targeting. | Planned |
 | 12 | Join Clients & Create Users | Deploy Windows 10 client(s). Create users. Join to domain. | Planned |
 | 13 | AD Security Groups | Role-based groups mapped to OUs. Add users. | Planned |
