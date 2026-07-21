@@ -39,14 +39,14 @@ Inside Windows:
 ### Rename the computer 
 
 In powershell (run as administrator), 
-```sh
+```powershell
 Rename-Computer -NewName "DC01" -Restart
 ```
 
 ### Install the AD DS role
 
 Also in powershell:
-```sh
+```powershell
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 ```
 
@@ -61,7 +61,7 @@ The reason for this error is because I was running Windows PowerShell (x86). Whe
 A Windows Active Directory forest is the highest logical container in Microsoft's directory service. It consists of one or more AD domains that share a single schema, a common configuration, and a global catalog. Crucially, the forest acts as the ultimate security boundary for your network.
 
 Also in powershell, make the forest:
-```sh
+```powershell
 Install-ADDSForest `
   -DomainName "lab.local" `
   -DomainNetbiosName "LAB" `
@@ -87,7 +87,7 @@ Run `Get-DnsServerZone`. You should see lab.local listed as a Primary zone, alon
 ![DnsServerZone command](docs/screenshots/08_domain_controller/dnsserverzone.png)
 
 Do some quick resolution tests:
-```sh
+```powershell
 nslookup lab.local
 nslookup dc01.lab.local
 ```

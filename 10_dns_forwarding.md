@@ -26,7 +26,7 @@ In the Windows Server:
 ![Adding forwarders in DC01](<docs/screenshots/10_dns_forwarding/add forwarders.png>)
 
 Or you could run this in PowerShell:
-```sh
+```powershell
 Set-DnsServerForwarder -IPAddress 1.1.1.1,8.8.8.8
 ```
 
@@ -93,7 +93,7 @@ It should succeed by displaying the IP address for google.com. If you want to be
 ### Test internal resolution
 
 From DC01, run the following:
-```sh
+```powershell
 nslookup lab.local
 nslookup dc01.lab.local
 ```
@@ -105,12 +105,12 @@ Both should resolve to 192.168.20.10, answered directly by DC01 without needing 
 
 You technically already set this in Objective #9, but confirm it explicitly and make sure it's DC01 only — no secondary DNS entry pointing at pfSense or 8.8.8.8 directly, since that would let clients bypass DC01 and break the "one authoritative DNS path" goal:
 
-```sh
+```powershell
 Set-DhcpServerv4OptionValue -ScopeId 192.168.10.0 -DnsServer 192.168.20.10
 ```
 
 Then, verify:
-```sh
+```powershell
 Get-DhcpServerv4OptionValue -ScopeId 192.168.10.0 -OptionId 6
 ```
 Should show only 192.168.20.10 listed.

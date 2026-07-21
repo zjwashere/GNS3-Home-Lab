@@ -26,14 +26,14 @@ This objective is about migrating DHCP responsibility from pfSense to DC01, and 
 ### Install the DHCP Server role on DC01
 
 Run in powershell: 
-```sh
+```powershell
 Install-WindowsFeature -Name DHCP -IncludeManagementTools
 ```
 ![Installed DHCP](<docs/screenshots/09_dhcp_server_relay/install dhcp.png>)
 
 ### Authorize DC01 in AD
 
-```sh
+```powershell
 Add-DhcpServerInDC -DnsName "dc01.lab.local" -IPAddress 192.168.20.10
 ```
 
@@ -44,7 +44,7 @@ This should list DC01.
 
 ### Create the DHCP scope for USERS
 
-```sh 
+```powershell 
 Add-DhcpServerv4Scope `
   -Name "USERS-VLAN10" `
   -StartRange 192.168.10.100 `
@@ -55,7 +55,7 @@ Add-DhcpServerv4Scope `
 
 ### Set scope options (gateway, DNS, domain name)
 
-```sh
+```powershell
 Set-DhcpServerv4OptionValue `
   -ScopeId 192.168.10.0 `
   -Router 192.168.10.1 `
@@ -92,7 +92,7 @@ This should now pull an address in the 192.168.10.100–200 range.
 ### Verify from the DC01 side too
 
 Run in powershell:
-```sh
+```powershell
 Get-DhcpServerv4Lease -ScopeId 192.168.10.0
 ```
 
