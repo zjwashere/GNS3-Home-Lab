@@ -17,7 +17,7 @@ Additionally, this is an opportunity to gain experience with tools utilized by c
 
 
 ## Current Topology
-![08_topology](docs/08_topology.png)
+![12_topology](docs/12_topology.png)
 
 ## Objectives
  
@@ -34,8 +34,8 @@ Additionally, this is an opportunity to gain experience with tools utilized by c
 | 9 | [DHCP Server & Relay](09_dhcp_server_relay.md) | DHCP role on DC01, authorize in AD. Scopes per VLAN. Relay on pfSense. | Completed |
 | 10 | [DNS Forwarding](10_dns_forwarding.md) | Forwarders on DC01. Point clients at DC01 DNS only. | Completed |
 | 11 | [Organizational Units](11_organizational_units.md) | Design and create OU structure for GPO targeting. | Completed |
-| 12 | [Join Clients & Create Users](12_join_clients_create_users.md) | Deploy Windows 10 client(s). Create users. Join to domain. | Planned |
-| 13 | AD Security Groups | Role-based groups mapped to OUs. Add users. | Planned |
+| 12 | [Join Clients & Create Users](12_join_clients_create_users.md) | Deploy Windows 10 client(s). Create users. Join to domain. | Completed |
+| 13 | [AD Security Groups](13_ad_security_groups.md) | Role-based groups mapped to OUs. Add users. | Planned |
 | 14 | Baseline GPOs | Password/lockout policy. Basic hardening GPO. Verify with gpresult. | Planned |
 | 15 | Lightweight Server Appliance | Server Core template for future roles. | Planned |
 | 16 | File Server (FS01) | Shares + NTFS permissions tied to AD groups. | Planned |
